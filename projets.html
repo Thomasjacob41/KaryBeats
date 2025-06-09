@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets - NomDuBeatmaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-item">
+      <img src="home.png" alt="Accueil" class="logo-icon" />
+      <span>Accueil</span>
+    </a>
+    <a href="projets.html" class="nav-item">
+      <img src="oip.png" alt="projets" class="logo-icon" />
+      <span>Projets</span>
+    </a>
+    <a href="about.html" class="nav-item">
+      <img src="apr.png" alt="about" class="logo-icon" />
+      <span>À propos</span>
+    </a>
+  </nav>
+
+  <main class="container">
+    <h1>Mes projets</h1>
+
+    <!-- Piste 1 -->
+    <div class="track-card">
+      <div class="track-info">
+        <h3>Bouss Type Beat "La Mission"</h3>
+        <p>Instrumental Afro/Mélodique · 140 BPM · 2024</p>
+        <div class="wave" id="wave-skyfall">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="audio-controls">
+          <button onclick="restartSound('audio-skyfall')">⏮️ Début</button>
+          <button onclick="pauseSound('audio-skyfall')">⏸️ Pause</button>
+          <button onclick="playSound('audio-skyfall')">▶️ Lecture</button>
+        </div>
+        <br>
+        <button class="btn outline" onclick="playSound('audio-skyfall')">Écouter</button>
+      </div>
+      <audio id="audio-skyfall" src="1.m4a"></audio>
+    </div>
+
+    <br>
+
+    <!-- Piste 2 -->
+    <div class="track-card">
+      <div class="track-info">
+        <h3>Gazo Type Beat "Nanani Nanana"</h3>
+        <p>Instrumental Trap/Mélodique · 140 BPM · 2024</p>
+        <div class="wave" id="wave-gazo">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="audio-controls">
+          <button onclick="restartSound('audio-gazo')">⏮️ Début</button>
+          <button onclick="pauseSound('audio-gazo')">⏸️ Pause</button>
+          <button onclick="playSound('audio-gazo')">▶️ Lecture</button>
+        </div>
+        <br>
+        <button class="btn outline" onclick="playSound('audio-gazo')">Écouter</button>
+      </div>
+      <audio id="audio-gazo" src="2.m4a.m4a"></audio>
+    </div>
+  </main>
+
+  <script>
+    function playSound(id) {
+      document.querySelectorAll("audio").forEach(audio => {
+        if (audio.id !== id) {
+          audio.pause();
+          stopWaves(audio.id);
+        }
+      });
+
+      const audio = document.getElementById(id);
+      audio.play();
+      startWaves(id);
+    }
+
+    function pauseSound(id) {
+      const audio = document.getElementById(id);
+      audio.pause();
+      stopWaves(id);
+    }
+
+    function restartSound(id) {
+      const audio = document.getElementById(id);
+      audio.currentTime = 0;
+      audio.play();
+      startWaves(id);
+    }
+
+    function startWaves(id) {
+      const waveId = "wave-" + id.split("audio-")[1];
+      const wave = document.getElementById(waveId);
+      if (wave) {
+        wave.querySelectorAll("span").forEach(span => {
+          span.style.animationPlayState = "running";
+        });
+      }
+    }
+
+    function stopWaves(id) {
+      const waveId = "wave-" + id.split("audio-")[1];
+      const wave = document.getElementById(waveId);
+      if (wave) {
+        wave.querySelectorAll("span").forEach(span => {
+          span.style.animationPlayState = "paused";
+        });
+      }
+    }
+  </script>
+</body>
+</html>
