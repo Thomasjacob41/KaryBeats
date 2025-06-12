@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projets - NomDuBeatmaker</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <nav class="nav">
@@ -35,10 +36,16 @@
           <span></span><span></span><span></span><span></span><span></span>
         </div>
         <div class="audio-controls">
-          <button onclick="restartSound('audio-skyfall')">⏮️ Début</button>
-          <button onclick="pauseSound('audio-skyfall')">⏸️ Pause</button>
-          <button onclick="playSound('audio-skyfall')">▶️ Lecture</button>
-        </div>
+  <button class="audio-btn" onclick="restartSound('audio-skyfall')">
+    <i class="fas fa-step-backward"></i>
+  </button>
+  <button class="audio-btn" onclick="pauseSound('audio-skyfall')">
+    <i class="fas fa-pause"></i>
+  </button>
+  <button class="audio-btn" onclick="playSound('audio-skyfall')">
+    <i class="fas fa-play"></i>
+  </button>
+</div>
         <br>
         <button class="btn outline" onclick="playSound('audio-skyfall')">Écouter</button>
       </div>
@@ -57,16 +64,23 @@
           <span></span><span></span><span></span><span></span><span></span>
         </div>
         <div class="audio-controls">
-          <button onclick="restartSound('audio-gazo')">⏮️ Début</button>
-          <button onclick="pauseSound('audio-gazo')">⏸️ Pause</button>
-          <button onclick="playSound('audio-gazo')">▶️ Lecture</button>
-        </div>
+  <button class="audio-btn" onclick="restartSound('audio-skyfall')">
+    <i class="fas fa-step-backward"></i>
+  </button>
+  <button class="audio-btn" onclick="pauseSound('audio-skyfall')">
+    <i class="fas fa-pause"></i>
+  </button>
+  <button class="audio-btn" onclick="playSound('audio-skyfall')">
+    <i class="fas fa-play"></i>
+  </button>
+</div>
         <br>
         <button class="btn outline" onclick="playSound('audio-gazo')">Écouter</button>
       </div>
       <audio id="audio-gazo" src="2.m4a.m4a"></audio>
     </div>
   </main>
+
 
   <script>
     function playSound(id) {
@@ -101,16 +115,6 @@
       if (wave) {
         wave.querySelectorAll("span").forEach(span => {
           span.style.animationPlayState = "running";
-        });
-      }
-    }
-
-    function stopWaves(id) {
-      const waveId = "wave-" + id.split("audio-")[1];
-      const wave = document.getElementById(waveId);
-      if (wave) {
-        wave.querySelectorAll("span").forEach(span => {
-          span.style.animationPlayState = "paused";
         });
       }
     }
