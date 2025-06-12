@@ -269,3 +269,145 @@ a {
     transform: scaleY(1.8); /* plus grand pour de longues ondes */
   }
 }
+.audio-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.audio-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-btn:hover {
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.audio-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.audio-btn i {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Animation pour le bouton play */
+.audio-btn:nth-child(3) {
+  background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
+}
+
+.audio-btn:nth-child(3):hover {
+  background: linear-gradient(145deg, #5a5a5a, #4a4a4a);
+}
+
+
+
+#popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#popup {
+  background: #111;
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: popupFadeIn 0.5s ease;
+}
+
+#popup-close {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+#carousel {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#carousel-content img,
+#carousel-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 32px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+.popup-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #c405a4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.popup-link:hover {
+  background: #a4048a;
+}
+
+@keyframes popupFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
