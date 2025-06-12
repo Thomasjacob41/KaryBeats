@@ -69,8 +69,8 @@
     }
 
     .logo-icon {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       object-fit: contain;
       margin-bottom: 4px;
       filter: brightness(0) invert(1);
@@ -478,15 +478,24 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-.hero-container2{
-    display: none;;
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.image-container img {
+  max-width: 33%;
+  height: auto;
+  border-radius: 16px; /* Optionnel : coins arrondis */
 }
 
   </style>
 </head>
 <body>
-    <div class="hero-container2">
-    <img src="logo.png" alt="logo" class="logo-image" />
 
   <nav class="nav">
     <a href="index.html" class="nav-item active">
