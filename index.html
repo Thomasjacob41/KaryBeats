@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --primary: #ff4d8d;
-      --secondary: #7928ca;
-      --dark: #0a0a0a;
-      --light: #f8f8f8;
-      --gray: #222222;
-    }
+  --primary: #bfff00;      /* vert citron vif */
+  --secondary: #7fff00;    /* vert citron plus foncé */
+  --dark: #0a0a0a;
+  --light: #f8f8f8;
+  --gray: #222222;
+}
 
     body {
       margin: 0;
@@ -83,7 +83,7 @@
       align-items: center;
       padding: 2rem 1rem;
       text-align: center;
-      background: linear-gradient(135deg, rgba(121,40,202,0.2), rgba(10,10,10,1));
+       background: linear-gradient(135deg, rgba(191,255,0,0.18), rgba(10,10,10,1));
     }
 
     .logo-image {
@@ -91,14 +91,15 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 10px rgba(255,77,141,0.5));
+      filter: drop-shadow(0 0 10px rgba(74, 235, 6, 0.5));
+      background:(circle, var(--secondary) 60%, transparent 100%);
     }
 
     .hero h1 {
       font-size: 2.5rem;
       font-weight: 900;
       margin: 0;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
+       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.2;
@@ -122,14 +123,16 @@
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: white;
-      box-shadow: 0 4px 20px rgba(255, 77, 141, 0.3);
-    }
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #18181b;
+  border: none;
+  box-shadow: 0 4px 20px rgba(191,255,0,0.18);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(255, 77, 141, 0.4);
+       box-shadow: 0 6px 25px rgba(191,255,0,0.25);
     }
 
     /* Tracks Section */
@@ -224,7 +227,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(255,77,141,0.3), rgba(121,40,202,0.3));
+      background: linear-gradient(90deg, rgba(113, 157, 23, 0.3), rgba(71, 255, 4, 0.525));
       transform: scaleX(0);
       transform-origin: left;
       animation: waveformAnim 2s infinite linear;
@@ -245,7 +248,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(137, 244, 7, 0.1);
       color: white;
       display: flex;
       align-items: center;
@@ -288,7 +291,7 @@
     .footer h2 {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
+       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -312,7 +315,7 @@
     }
 
     .social-link:hover {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+       background: linear-gradient(90deg, var(--primary), var(--secondary));
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(255, 77, 141, 0.3);
     }
@@ -460,8 +463,8 @@
 .popup-link {
   display: inline-block;
   margin-top: 1rem;
-  background: #c405a4;
-  color: white;
+  background: #68e10b;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
@@ -470,7 +473,9 @@
 }
 
 .popup-link:hover {
-  background: #a4048a;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  color: #18181b;
+  box-shadow: 0 6px 25px rgba(191,255,0,0.25);
 }
 
 @keyframes popupFadeIn {
@@ -518,8 +523,8 @@
     <img src="logo.png" alt="logo" class="logo-image" />
     
     <div class="hero">
-      <h1>Des beats qui marquent l'époque</h1>
-      <p>Trap, drill, afro... Le son, c'est ici que ça commence.</p>
+      <h1>Des beats qui marquent</h1>
+      <p>Trap, drill, afro...</p>
       <a href="projets.html" class="btn btn-primary">Explorer les prods</a>
     </div>
   </div>
@@ -680,8 +685,8 @@
 
       <button class="arrow right" id="next">&#10095;</button>
     </div>
-    <h2>NOUVEAU PROJET !</h2>
-    <p>" DISPONIBLE LE 21 JUIN</p>
+    <h2>NOUVEAU PROJET!</h2>
+    <p>DISPONIBLE LE 21 JUIN</p>
     <a href="https://www.instagram.com/studio.4r/p/DKzyQ9oq2z-/" target="_blank" class="popup-link">Voir sur Instagram</a>
   </div>
 </div>
