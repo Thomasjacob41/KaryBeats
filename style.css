@@ -30,13 +30,25 @@ a {
   align-items: center;
   font-size: 0.8rem;
   color: #ccc;
+  font-weight: normal;
+  transition: color 0.2s;
 }
 
 .nav-item.active {
-  color: white;
+  color: var(--primary) !important;
   font-weight: bold;
 }
 
+.nav-item.active:visited,
+.nav-item.active:focus,
+.nav-item.active:active,
+.nav-item.active:hover {
+  color: var(--primary) !important;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+}
 
 .image-container {
   display: flex;
@@ -47,7 +59,7 @@ a {
 }
 
 .image-container img {
-  max-width: 100%;
+  max-width: 33%;
   height: auto;
   border-radius: 16px; /* Optionnel : coins arrondis */
 }
@@ -81,10 +93,14 @@ a {
 }
 
 .track-card {
-  background: #111;
-  padding: 1rem;
-  border-radius: 16px;
-   align-items: center;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.track-card:hover {
+  box-shadow: 0 4px 20px #000a;
+  border-color: var(--accent);
 }
 
 .track-card h3 {
@@ -410,4 +426,9 @@ a {
 @keyframes popupFadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
+}
+
+:root {
+  --primary: #bfff00;
+  /* ...autres variables... */
 }
